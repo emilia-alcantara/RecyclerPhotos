@@ -45,12 +45,12 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        //      private ItemBinding binding;
+        private ItemBinding binding;
         private ImageView imgItem; //???
 
         public MyViewHolder(ItemBinding binding) {
             super(binding.getRoot());
-            //     this.binding = binding;
+            this.binding = binding;
             imgItem = binding.imgItem; //??
             itemView.setOnClickListener(this);
         }
@@ -58,7 +58,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
 
         @Override
         public void onClick(View v) {
-            //pendiente
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_galleryFragment_to_detailFragment);
 
 
         }
