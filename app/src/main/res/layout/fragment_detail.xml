@@ -9,22 +9,26 @@
 
     <ImageView
         android:id="@+id/imgDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="456dp"
+        android:layout_width="325dp"
+        android:layout_height="276dp"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.109" />
 
     <TextView
         android:id="@+id/txtImgDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_width="286dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/farro"
+        android:gravity="center"
         android:text="TextView"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/imgDetail"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="@+id/imgDetail"
         app:layout_constraintTop_toBottomOf="@+id/imgDetail" />
 
@@ -32,8 +36,14 @@
         android:id="@+id/btnVolver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#63B6C1"
+        android:fontFamily="@font/farro"
+        android:padding="15dp"
         android:text="Volver"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="@+id/txtImgDescription"
         app:layout_constraintStart_toStartOf="@+id/txtImgDescription"
         app:layout_constraintTop_toBottomOf="@+id/txtImgDescription" />
