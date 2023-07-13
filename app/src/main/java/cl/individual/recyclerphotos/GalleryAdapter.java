@@ -56,13 +56,19 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
 
         @Override
         public void onClick(View v) {
+            // Obtención de la posición del item seleccionado
             int position = getLayoutPosition();
+
+            // Obtención del link de la imagen específica y su descripción
             String imgLink = String.valueOf(photoGallery.get(position).getImgLink());
             String imgDescription = String.valueOf(photoGallery.get(position).getImgDetail());
+
+            // Creación de un Bundle para entregar la información al siguiente fragmento
             Bundle newBundle = new Bundle();
             newBundle.putString("link", imgLink);
             newBundle.putString("details", imgDescription);
 
+            // Navegación al segundo fragmento entregando la información de lo que se tiene que mostrar
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_galleryFragment_to_detailFragment, newBundle);
         }
     }

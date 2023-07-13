@@ -70,6 +70,7 @@ public class GalleryFragment extends Fragment{
     }
 
     private void initRecycler() {
+
         GalleryAdapter galleryAdapter = new GalleryAdapter();
 
         galleryAdapter.setPhotoGallery(data);

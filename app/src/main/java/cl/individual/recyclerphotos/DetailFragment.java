@@ -73,6 +73,8 @@ public class DetailFragment extends Fragment {
     }
 
     private void initListeners() {
+
+        // Funcionalidad del botón Volver (vuelve al fragmento anterior)
         binding.btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,10 +85,15 @@ public class DetailFragment extends Fragment {
     }
 
     private void initDetail() {
+        // Se obtienen los argumentos enviados en el Bundle
         String imgLink = getArguments().getString("link");
         String imgDescripcion = getArguments().getString("details");
+
+        /* Una vez obtenido el link de la imagen seleccionada, se vuelve a utilizar Picasso para
+        cargar la imagen específica */
         Picasso.get().load(imgLink).into(binding.imgDetail);
 
+        // Se muestra la descripción correspondiente a la imagen
         binding.txtImgDescription.setText(imgDescripcion);
 
     }
