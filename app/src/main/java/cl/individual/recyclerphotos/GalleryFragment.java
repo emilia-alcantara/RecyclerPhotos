@@ -1,20 +1,13 @@
 package cl.individual.recyclerphotos;
 
-import android.content.ClipData;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import cl.individual.recyclerphotos.databinding.FragmentGalleryBinding;
 
 /**
@@ -22,7 +15,7 @@ import cl.individual.recyclerphotos.databinding.FragmentGalleryBinding;
  * Use the {@link GalleryFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GalleryFragment extends Fragment {
+public class GalleryFragment extends Fragment{
     private FragmentGalleryBinding binding;
     List<PhotoModel> data = getData();
 
@@ -78,24 +71,26 @@ public class GalleryFragment extends Fragment {
 
     private void initRecycler() {
         GalleryAdapter galleryAdapter = new GalleryAdapter();
+
         galleryAdapter.setPhotoGallery(data);
 
         binding.recGallery.setAdapter(galleryAdapter);
     }
 
+
     private List<PhotoModel> getData() {
         ArrayList<PhotoModel> photoGallery = new ArrayList<>();
         photoGallery.add(new PhotoModel("https://images.unsplash.com/photo-1689072503598-638956beee7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=660&q=80", "Una inglesia en el medio de un campo bajo el cielo nocturno estrellado"));
-        //Una inglesia en el medio de un campo bajo el cielo nocturno estrellado
+
         photoGallery.add(new PhotoModel("https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60", "Foto de una persona parada en la cima de una colina rocosa"));
-        //Foto de una persona parada en la cima de una colina rocosa
-   //     photoGallery.add("https://images.unsplash.com/photo-1688725755373-10d1bb23b55d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80");
-        //Una persona caminando por una calle sosteniendo un paraguas
-   //     photoGallery.add("https://images.unsplash.com/photo-1689089764982-3c081cc0089a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0NXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
-        //Una mujer parada frente a una cascada
-   //     photoGallery.add("https://images.unsplash.com/photo-1688890239467-c43da335fe7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1MHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
-        //Un pequeño animal parado en un campo de flores blancas
+
+        photoGallery.add(new PhotoModel("https://images.unsplash.com/photo-1688725755373-10d1bb23b55d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80", "Una persona caminando por una calle sosteniendo un paraguas"));
+
+        photoGallery.add(new PhotoModel("https://images.unsplash.com/photo-1689089764982-3c081cc0089a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0NXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60", "Una mujer parada frente a una cascada"));
+
+        photoGallery.add(new PhotoModel("https://images.unsplash.com/photo-1688890239467-c43da335fe7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1MHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60", "Un pequeño animal parado en un campo de flores blancas"));
 
         return photoGallery;
     }
+
 }

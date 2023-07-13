@@ -1,22 +1,20 @@
 package cl.individual.recyclerphotos;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.squareup.picasso.Picasso;
-
 import java.util.List;
-
 import cl.individual.recyclerphotos.databinding.ItemBinding;
 
 public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHolder> {
     private List<PhotoModel> photoGallery;
+
 
     public void setPhotoGallery(List<PhotoModel> photoGallery) {
         this.photoGallery = photoGallery;
@@ -36,7 +34,6 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
                 .load(photo.getImgLink())
                 .error(com.google.android.material.R.drawable.mtrl_ic_error)
                 .into(holder.imgItem);
-
     }
 
     @Override
@@ -52,16 +49,22 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
         public MyViewHolder(ItemBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
-            imgItem = binding.imgItem; //??
+            imgItem = binding.imgItem;
             itemView.setOnClickListener(this);
         }
 
 
         @Override
         public void onClick(View v) {
-            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_galleryFragment_to_detailFragment);
+            int position = getLayoutPosition();
+            String imgLink = String.valueOf(photoGallery.get(position).getImgLink());
+            String imgDescription = String.valueOf(photoGallery.get(position).getImgDetail());
+            Bundle newBundle = new Bundle();
+            newBundle.putString("link", imgLink);
+            newBundle.putString("details", imgDescription);
 
-
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_galleryFragment_to_detailFragment, newBundle);
         }
     }
+
 }

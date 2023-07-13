@@ -1,5 +1,6 @@
 package cl.individual.recyclerphotos;
 
+
 public class PhotoModel {
     String imgLink;
     String imgDetail;
@@ -24,4 +25,6 @@ public class PhotoModel {
     public void setImgDetail(String imgDetail) {
         this.imgDetail = imgDetail;
     }
+
+
 }

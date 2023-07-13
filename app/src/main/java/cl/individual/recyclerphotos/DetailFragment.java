@@ -1,13 +1,14 @@
 package cl.individual.recyclerphotos;
 
-import android.os.Bundle;
 
+import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.squareup.picasso.Picasso;
 
 import cl.individual.recyclerphotos.databinding.FragmentDetailBinding;
 
@@ -18,7 +19,8 @@ import cl.individual.recyclerphotos.databinding.FragmentDetailBinding;
  */
 public class DetailFragment extends Fragment {
     private FragmentDetailBinding binding;
-    GalleryFragment galleryFragment = new GalleryFragment();
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -64,8 +66,9 @@ public class DetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentDetailBinding.inflate(getLayoutInflater(), container, false);
-       initDetail();
-       initListeners();
+        initDetail();
+        initListeners();
+
         return binding.getRoot();
     }
 
@@ -80,6 +83,11 @@ public class DetailFragment extends Fragment {
     }
 
     private void initDetail() {
-        //pendiente
+        String imgLink = getArguments().getString("link");
+        String imgDescripcion = getArguments().getString("details");
+        Picasso.get().load(imgLink).into(binding.imgDetail);
+
+        binding.txtImgDescription.setText(imgDescripcion);
+
     }
 }
