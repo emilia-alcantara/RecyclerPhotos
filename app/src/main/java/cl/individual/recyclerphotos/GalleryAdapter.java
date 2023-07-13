@@ -16,9 +16,9 @@ import java.util.List;
 import cl.individual.recyclerphotos.databinding.ItemBinding;
 
 public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHolder> {
-    private List<String> photoGallery;
+    private List<PhotoModel> photoGallery;
 
-    public void setPhotoGallery(List<String> photoGallery) {
+    public void setPhotoGallery(List<PhotoModel> photoGallery) {
         this.photoGallery = photoGallery;
     }
 
@@ -31,9 +31,9 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        String photo = photoGallery.get(position);
+        final PhotoModel photo = photoGallery.get(position);
         Picasso.get()
-                .load(photo)
+                .load(photo.getImgLink())
                 .error(com.google.android.material.R.drawable.mtrl_ic_error)
                 .into(holder.imgItem);
 
@@ -46,7 +46,8 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ItemBinding binding;
-        private ImageView imgItem; //???
+        private ImageView imgItem;
+
 
         public MyViewHolder(ItemBinding binding) {
             super(binding.getRoot());

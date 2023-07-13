@@ -24,7 +24,7 @@ import cl.individual.recyclerphotos.databinding.FragmentGalleryBinding;
  */
 public class GalleryFragment extends Fragment {
     private FragmentGalleryBinding binding;
-    List<String> data = getData();
+    List<PhotoModel> data = getData();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -83,17 +83,17 @@ public class GalleryFragment extends Fragment {
         binding.recGallery.setAdapter(galleryAdapter);
     }
 
-    private List<String> getData() {
-        ArrayList<String> photoGallery = new ArrayList<>();
-        photoGallery.add("https://images.unsplash.com/photo-1689072503598-638956beee7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=660&q=80");
+    private List<PhotoModel> getData() {
+        ArrayList<PhotoModel> photoGallery = new ArrayList<>();
+        photoGallery.add(new PhotoModel("https://images.unsplash.com/photo-1689072503598-638956beee7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=660&q=80", "Una inglesia en el medio de un campo bajo el cielo nocturno estrellado"));
         //Una inglesia en el medio de un campo bajo el cielo nocturno estrellado
-        photoGallery.add("https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+        photoGallery.add(new PhotoModel("https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60", "Foto de una persona parada en la cima de una colina rocosa"));
         //Foto de una persona parada en la cima de una colina rocosa
-        photoGallery.add("https://images.unsplash.com/photo-1688725755373-10d1bb23b55d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80");
+   //     photoGallery.add("https://images.unsplash.com/photo-1688725755373-10d1bb23b55d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80");
         //Una persona caminando por una calle sosteniendo un paraguas
-        photoGallery.add("https://images.unsplash.com/photo-1689089764982-3c081cc0089a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0NXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+   //     photoGallery.add("https://images.unsplash.com/photo-1689089764982-3c081cc0089a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0NXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
         //Una mujer parada frente a una cascada
-        photoGallery.add("https://images.unsplash.com/photo-1688890239467-c43da335fe7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1MHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+   //     photoGallery.add("https://images.unsplash.com/photo-1688890239467-c43da335fe7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1MHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
         //Un pequeño animal parado en un campo de flores blancas
 
         return photoGallery;
